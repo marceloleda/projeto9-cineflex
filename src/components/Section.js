@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 
 export default function Section(){
@@ -18,34 +19,42 @@ export default function Section(){
     return(
         <>
             <Conteiner>
-                <div>
+                <Categoria>
                     <h1>Selecione o filme</h1>
-                </div>
+                </Categoria>
                 <Filme>
-                    {filmes.map( (item, index) => <ImgFilme><img key={index} src={item.posterURL} alt={item.title}/></ImgFilme> )}                   
+                    {filmes.map( (item, index) => 
+                    <ImgFilme>
+                        <Link to={`/sessoes/${item.id}`}>
+                            <img key={index} src={item.posterURL} alt={item.title}/>
+                        </Link>
+                    </ImgFilme> )}                   
                 </Filme>
             </Conteiner>
         </>
     );
 }
 
+const Categoria = styled.div`
+    height: 110px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+`;
+
 const Conteiner = styled.div`
+
     h1{
         font-size: 24px;
         font-family: 'Roboto';
         letter-spacing: 0.04em;
         color: #293845;
     }
-    div{
-        height: 110px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
 `;
 const Filme = styled.div`
     display:flex;
     flex-wrap: wrap;
+    justify-content:space-around;
 
     
     img{
@@ -54,8 +63,16 @@ const Filme = styled.div`
     }
 `;
 const ImgFilme = styled.div`
-    margim-bottom: 50px;
-    display:flex;
-    justify-content:space-between;
+    margin-top: 50px;
+    width: 145px;
+    height: 209px;
+    background-color: #FFFFFF;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    box-shadow: 0px 2px 4px 2px rgba(0, 0, 0, 0.1);
+    border-radius: 3px;
 
 `;
