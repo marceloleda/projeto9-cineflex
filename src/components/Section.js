@@ -18,19 +18,17 @@ export default function Section(){
 
     return(
         <>
-            <Conteiner>
-                <Categoria>
-                    <h1>Selecione o filme</h1>
-                </Categoria>
-                <Filme>
-                    {filmes.map( (item, index) => 
-                    <ImgFilme>
-                        <Link to={`/sessoes/${item.id}`}>
-                            <img key={index} src={item.posterURL} alt={item.title}/>
-                        </Link>
-                    </ImgFilme> )}                   
-                </Filme>
-            </Conteiner>
+            <Categoria>
+                <h1>Selecione o filme</h1>
+            </Categoria>
+            <Filme>
+                {filmes.map( (item, index) => 
+                <ImgFilme key={index}>
+                    <Link to={`./sessoes/${item.id}`}>
+                        <img key={index} src={item.posterURL} alt={item.title}/>
+                    </Link>
+                </ImgFilme> )}                   
+            </Filme>
         </>
     );
 }
@@ -40,17 +38,13 @@ const Categoria = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-`;
-
-const Conteiner = styled.div`
-
     h1{
         font-size: 24px;
-        font-family: 'Roboto';
         letter-spacing: 0.04em;
         color: #293845;
     }
 `;
+
 const Filme = styled.div`
     display:flex;
     flex-wrap: wrap;
@@ -63,7 +57,7 @@ const Filme = styled.div`
     }
 `;
 const ImgFilme = styled.div`
-    margin-top: 50px;
+    margin-top: 15px;
     width: 145px;
     height: 209px;
     background-color: #FFFFFF;
