@@ -12,27 +12,27 @@ export default function Finalizar(props){
       }
     return (
     <Container>
-      <DadosConfirmacao>
-        <h1>Pedido feito com sucesso!</h1>
-        <Infos>
-          <h1>Filme e sessão</h1>
-          <p>{filme}</p>
-          <p>
-            {dia} {horario}
-          </p>
-        </Infos>
-        <Infos>
-          <h1>Ingressos</h1>
-          {assentos.map(({ numero }) => {
-            return <p key={numero}>Assento {numero}</p>;
-          })}
-        </Infos>
-        <Infos>
-          <h1>Comprador</h1>
-          <p>Nome: {nome}</p>
-          <p>CPF: {cpf}</p>
-        </Infos>
-      </DadosConfirmacao>
+        <DadosConfirmacao>
+            <h1>Pedido feito com sucesso!</h1>
+            <Infos>
+                <h1>Filme e sessão</h1>
+                <p>{filme}</p>
+                <p>
+                    {dia} {horario}
+                </p>
+            </Infos>
+            <Infos>
+                <h1>Ingressos</h1>
+                {assentos.map(({ numero }) => {
+                    return <p key={numero}>Assento {numero}</p>;
+                })}
+            </Infos>
+            <Infos>
+                <h1>Comprador</h1>
+                <p>Nome: {nome}</p>
+                <p>CPF: {cpf}</p>
+            </Infos>
+        </DadosConfirmacao>
       <BotaoVoltar onClick={Home}>Voltar para home</BotaoVoltar>
     </Container>
   );
@@ -41,6 +41,7 @@ export default function Finalizar(props){
 
 const DadosConfirmacao = styled.div`
   font-size: 22px;
+  margin-left:55px;
   h1 {
     width: 370px;
     height: 30px;
@@ -54,8 +55,7 @@ const DadosConfirmacao = styled.div`
 `;
 
 const Container = styled.div`
-  margin: 70px 30px;
-  margin-left: 25px;
+  margin: 0px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -84,6 +84,7 @@ const Infos = styled.div`
   display: flex;
   flex-direction: column;
   h1 {
+    margin-bottom:0px;
     display: flex;
     justify-content: flex-start;
     align-items: center;
