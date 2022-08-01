@@ -70,13 +70,14 @@ const Container = styled.div`
 `;
 
 const BotaoVoltar = styled.button`
-  background-color: var(--cor-laranja);
-  width: 225px;
-  color: white;
-  padding: 10px 5px;
-  border: 0;
-  margin-top: 60px;
-  cursor: pointer;
+    width: 225px;
+    height: 42px;
+
+    background: #E8833A;
+    border-radius: 3px;
+    margin-top: 60px;
+    cursor: pointer;
+    border: none;
 `;
 
 const Infos = styled.div`
